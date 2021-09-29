@@ -4,6 +4,11 @@
     padding:0px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.submenu
+{
+    display: none;
+}
 nav.menu
 {
     background-color: #0e1111;
@@ -18,7 +23,7 @@ nav.menu ul
     list-style-type: none;
 }
 
-nav.menu li
+nav.menu li.mainmenu
 {
     float: left;
     width: 20%;
@@ -36,8 +41,65 @@ nav.menu a
 
 nav.menu a:hover
 {
-    color:#ed2024;
+    /* color:#ed2024; */
     border-bottom: 2px solid #ed2024;
+}
+
+/* nav.hovered, nav.redd
+{
+    color: transparent;
+}
+
+nav.hovered:hover
+{
+    color: ivory;
+}
+
+nav.redd:hover
+{
+    color:#ed2024;
+} */
+
+
+nav.menu a:hover::before
+{
+    content:"● [";
+    font-size: 16px;
+}
+
+nav.menu a:hover::after
+{
+    content:"]";
+    font-size: 16px;;
+}
+
+nav.menu > ul li:hover .submenu
+{
+    display: inline-block;
+}
+
+.sous li
+{
+    width: 100%;
+    text-align: left;
+}
+
+.sous a 
+{
+    padding: 10px;
+    border-bottom: none;
+}
+
+.sous a:hover
+{
+    border-bottom: none;
+    background-color: tomato;
+}
+
+.dropdown > a::after
+{
+    content:"▼";
+    font-size: 12px;
 }
 
 nav.menu ul::after
